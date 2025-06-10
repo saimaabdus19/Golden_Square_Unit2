@@ -32,3 +32,30 @@ def test_first_second_return_equal():
     equal_values = HighValue(5,5)
     result = equal_values.get_highest()
     assert result == "Values are equal"
+
+def test_first_value_negative_and_highest():
+    first_value = HighValue(-5,-8)
+    result = first_value.get_highest()
+    assert result == "First value is higher"
+
+def test_second_value_negative_and_highest():
+    second_value = HighValue(-10,-8)
+    result = second_value.get_highest()
+    assert result == "Second value is higher"
+
+def test_values_equal_to_zero():
+    zero_value = HighValue(0,0)
+    result = zero_value.get_highest()
+    assert result == "Values are equal"
+
+def test_adding_to_first_value_checking_highest():
+    adding_values = HighValue(3,5)
+    adding_values.add(10, "first")
+    result = adding_values.get_highest()
+    assert result == "First value is higher"
+
+def test_adding_to_second_value_checking_highest():
+    adding_values = HighValue(3,5)
+    adding_values.add(10, "second")
+    result = adding_values.get_highest()
+    assert result == "Second value is higher"
