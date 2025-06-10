@@ -18,4 +18,17 @@ def test_highest_when_second_value_highest():
     result = second_value.get_highest()
     assert result == "Second value is higher"
 
-def
+def test_add_to_first_value():
+    first_value = HighValue(3,5)
+    first_value.add(10,"first")
+    assert first_value.value_first == 13
+
+def test_add_to_second_value():
+    second_value = HighValue(3,5)
+    second_value.add(10,"second")
+    assert second_value.value_second == 15
+
+def test_first_second_return_equal():
+    equal_values = HighValue(5,5)
+    result = equal_values.get_highest()
+    assert result == "Values are equal"
